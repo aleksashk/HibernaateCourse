@@ -14,15 +14,15 @@ public class Test2 {
 
         try {
             Session session = factory.getCurrentSession();
-            Employee emp = new Employee("Elena", "Stolarova", "Sales", 740);
-            session.beginTransaction();
-            session.save(emp);
-            session.getTransaction().commit();
+//            Employee emp = new Employee("Elena", "Stolarova", "Sales", 740);
+//            session.beginTransaction();
+//            session.save(emp);
+//            session.getTransaction().commit();
 
-            int myId = emp.getId();
+//            int myId = emp.getId();
             session = factory.getCurrentSession();
             session.beginTransaction();
-            Employee employee = session.get(Employee.class, myId);
+            Employee employee = session.get(Employee.class, 101);
             session.getTransaction().commit();
             System.out.println(employee);
 
