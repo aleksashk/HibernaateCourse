@@ -19,7 +19,7 @@ public class Test3 {
             Employee emp = new Employee("Timon", "Pumba", "HR", 742);
             session.beginTransaction();
 
-            List<Employee> emps = session.createQuery("from Employee")
+            List<Employee> emps = session.createQuery("from Employee where name = 'Aleksandr'")
                             .getResultList();
             for (Employee e : emps) {
                 System.out.println(e);
