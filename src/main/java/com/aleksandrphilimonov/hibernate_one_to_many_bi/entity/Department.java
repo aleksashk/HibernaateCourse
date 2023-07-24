@@ -3,6 +3,7 @@ package com.aleksandrphilimonov.hibernate_one_to_many_bi.entity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -30,11 +31,9 @@ public class Department {
     @Column(name = "min_salary")
     private int minSalary;
 
-    @OneToMany(cascade = {CascadeType.REFRESH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.DETACH}
-            , mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL
+            , mappedBy = "department"
+    , fetch = FetchType.EAGER)
     private List<Employee> emps;
 
     public Department() {
