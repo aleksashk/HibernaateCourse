@@ -19,10 +19,10 @@ public class Test1 {
             session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Department department = session.get(Department.class, 1);
-            System.out.println(department);
+            Employee employee = session.get(Employee.class, 1);
+            System.out.println(employee);
             System.out.println("-----------------------------------");
-            System.out.println(department.getEmps());
+            System.out.println(employee.getDepartment());
             System.out.println("-----------------------------------");
 
 
