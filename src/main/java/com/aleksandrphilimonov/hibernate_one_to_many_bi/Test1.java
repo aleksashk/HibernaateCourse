@@ -20,11 +20,7 @@ public class Test1 {
             session.beginTransaction();
 
             Employee employee = session.get(Employee.class, 1);
-            System.out.println(employee);
-            System.out.println("-----------------------------------");
-            System.out.println(employee.getDepartment());
-            System.out.println("-----------------------------------");
-
+            session.delete(employee);
 
             session.getTransaction().commit();
             System.out.println("DONE!");
