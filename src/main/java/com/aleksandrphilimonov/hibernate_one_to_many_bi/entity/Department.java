@@ -34,6 +34,9 @@ public class Department {
             , mappedBy = "department")
     private List<Employee> emps;
 
+    public Department() {
+    }
+
     public Department(String departmentName, int maxSalary, int minSalary) {
         this.departmentName = departmentName;
         this.maxSalary = maxSalary;
