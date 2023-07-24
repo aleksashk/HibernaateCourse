@@ -30,7 +30,10 @@ public class Department {
     @Column(name = "min_salary")
     private int minSalary;
 
-    @OneToMany(cascade = CascadeType.ALL
+    @OneToMany(cascade = {CascadeType.REFRESH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.DETACH}
             , mappedBy = "department")
     private List<Employee> emps;
 

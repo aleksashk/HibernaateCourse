@@ -19,9 +19,16 @@ public class Test1 {
             session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Employee employee = session.get(Employee.class, 1);
+//            Employee employee1 = new Employee("Aleh", "Perepelkin", 540);
+//            Employee employee2 = new Employee("Igor", "Vladov", 1020);
+//
+//            Department department = new Department("SALE", 1500, 300);
+            Employee employee = session.get(Employee.class, 3);
             session.delete(employee);
 
+//            department.addEmployeeToDepartment(employee1);
+//            department.addEmployeeToDepartment(employee2);
+//            session.d();
             session.getTransaction().commit();
             System.out.println("DONE!");
         } finally {
