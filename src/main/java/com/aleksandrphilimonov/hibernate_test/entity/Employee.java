@@ -1,4 +1,4 @@
-package hibernate_test.entity;
+package com.aleksandrphilimonov.hibernate_test.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

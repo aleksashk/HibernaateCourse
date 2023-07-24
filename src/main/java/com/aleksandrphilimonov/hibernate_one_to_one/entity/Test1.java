@@ -1,4 +1,4 @@
-package hibernate_test_2.entity;
+package com.aleksandrphilimonov.hibernate_one_to_one.entity;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
