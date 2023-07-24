@@ -11,6 +11,7 @@ public class Test1 {
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
+        Session session = null;
 
         try {
 //            Session session = factory.getCurrentSession();
@@ -26,18 +27,26 @@ public class Test1 {
 //            session.getTransaction().commit();
 //            System.out.println("DONE!");
 
+//            Session session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//            Employee emp = session.get(Employee.class, 1);
+//            System.out.println(emp +" ->\n" + emp.getEmpDetail());
+//
+//            session.getTransaction().commit();
+//            System.out.println("DONE!");
+//
 
-
-
-            Session session = factory.getCurrentSession();
+            session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Employee emp = session.get(Employee.class, 1);
-            System.out.println(emp +" ->\n" + emp.getEmpDetail());
+            Employee emp = session.get(Employee.class, 10);
+            System.out.println(emp + " ->\n" + emp.getEmpDetail());
 
             session.getTransaction().commit();
             System.out.println("DONE!");
         } finally {
+            session.close();
             factory.close();
         }
     }
