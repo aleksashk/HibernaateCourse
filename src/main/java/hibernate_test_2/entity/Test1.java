@@ -40,8 +40,8 @@ public class Test1 {
             session = factory.getCurrentSession();
 
             session.beginTransaction();
-            Employee emp = session.get(Employee.class, 10);
-            System.out.println(emp + " ->\n" + emp.getEmpDetail());
+            Employee emp = session.get(Employee.class, 2);
+            session.delete(emp);
 
             session.getTransaction().commit();
             System.out.println("DONE!");
