@@ -1,10 +1,12 @@
 package hibernate_test_2.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -25,6 +27,9 @@ public class Detail {
     @Column(name = "email")
     private String email;
 
+    @OneToOne(mappedBy = "empDetail", cascade = CascadeType.ALL)
+    private Employee employee;
+
     public Detail() {
     }
 
@@ -32,6 +37,14 @@ public class Detail {
         this.city = city;
         this.phoneNumber = phoneNumber;
         this.email = email;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public String getCity() {
