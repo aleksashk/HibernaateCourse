@@ -1,10 +1,14 @@
 package hibernate_test_2.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "details")
 public class Detail {
 
     @Id
@@ -15,7 +19,7 @@ public class Detail {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "phoneNumber")
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     @Column(name = "email")
