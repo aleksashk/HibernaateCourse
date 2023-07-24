@@ -34,6 +34,8 @@ public class Test1 {
             System.out.println("show department\n------------------------------------------------------------------------------------------------------");
             System.out.println(department);
 
+            System.out.println("Подгружаем работников");
+            department.getEmps().get(0);
 
             session.getTransaction().commit();
             System.out.println("show employees of the department\n------------------------------------------------------------------------------------------------------");
