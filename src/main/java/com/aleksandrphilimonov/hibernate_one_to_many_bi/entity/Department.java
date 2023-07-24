@@ -33,7 +33,7 @@ public class Department {
 
     @OneToMany(cascade = CascadeType.ALL
             , mappedBy = "department"
-    , fetch = FetchType.LAZY)
+    , fetch = FetchType.EAGER)
     private List<Employee> emps;
 
     public Department() {

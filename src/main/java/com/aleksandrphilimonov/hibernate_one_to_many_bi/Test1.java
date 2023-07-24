@@ -33,11 +33,11 @@ public class Test1 {
             Department department = session.get(Department.class, 8);
             System.out.println("show department\n------------------------------------------------------------------------------------------------------");
             System.out.println(department);
-            System.out.println("show employees of the department\n------------------------------------------------------------------------------------------------------");
-            System.out.println(department.getEmps());
 
 
             session.getTransaction().commit();
+            System.out.println("show employees of the department\n------------------------------------------------------------------------------------------------------");
+            System.out.println(department.getEmps());
             System.out.println("DONE!\n------------------------------------------------------------------------------------------------------");
         } finally {
             session.close();
