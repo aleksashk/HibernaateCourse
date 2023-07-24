@@ -86,9 +86,15 @@ public class Test1 {
 
             session.beginTransaction();
 
-            Section section = session.get(Section.class, 5);
+            Section section1 = new Section("Footbal");
+            Child child1 = new Child("Aleks", 4);
+            Child child2 = new Child("Misha", 5);
+            Child child3 = new Child("Nadya", 6);
 
-            session.delete(section);
+            section1.addChildToSection(child1);
+            section1.addChildToSection(child2);
+            section1.addChildToSection(child3);
+            session.save(section1);
             session.getTransaction().commit();
             System.out.println("DONE!");
         } finally {
